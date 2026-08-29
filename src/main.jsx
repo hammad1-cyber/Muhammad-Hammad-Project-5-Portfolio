@@ -145,9 +145,9 @@ function App() {
         <button
           className="Menu"
           type="button"
-          onClick={() => setMenu(!Menu)}
+          onClick={() => setMenu(!menu)}
           aria-label="Toggle navigation"
-          aria-expanded={Menu}
+          aria-expanded={menu}
         >
           {menu ? "X" : "MENU"}
         </button>
