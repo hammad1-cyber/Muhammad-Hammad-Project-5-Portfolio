@@ -10,7 +10,7 @@ const projects = [
     technologies: ["HTML", "CSS", "JavaScript"],
     description:
       "Healthcare website with services, doctors, appointment booking, contact pages, and responsive layouts.",
-    image: "/projects/project-1-medical.JPG",
+    image: `${import.meta.env.BASE_URL}projects/project-1-medical.JPG`,
     website:
       "https://hammad1-cyber.github.io/project-1-medical-website/",
     github:
@@ -24,7 +24,7 @@ const projects = [
     technologies: ["React", "CSS", "Mock API"],
     description:
       "Functional academic dashboard for students, courses, attendance, results, search, and filtering.",
-    image: "/projects/project-2-student.JPG",
+    image: `${import.meta.env.BASE_URL}projects/project-2-student.JPG`,
     website:
       "https://hammad1-cyber.github.io/project-2-student-management/",
     github:
@@ -38,7 +38,7 @@ const projects = [
     technologies: ["React", "JavaScript", "REST API"],
     description:
       "API-powered product explorer with categories, sorting, product details, favorites, and cart calculations.",
-    image: "/projects/project-3-products.JPG",
+    image: `${import.meta.env.BASE_URL}projects/project-3-products.JPG`,
     website:
       "https://hammad1-cyber.github.io/project-3-api-product-explorer/",
     github:
@@ -52,7 +52,7 @@ const projects = [
     technologies: ["React", "JavaScript", "Weather API"],
     description:
       "Real weather experience with current conditions, hourly and daily forecasts, searches, and error and loading states.",
-    image: "/projects/project-4-weather.JPG",
+    image: `${import.meta.env.BASE_URL}projects/project-4-weather.JPG`,
     website:
       "https://hammad1-cyber.github.io/project-4-weather-app/",
     github:
