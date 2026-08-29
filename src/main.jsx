@@ -135,26 +135,26 @@ function App() {
         <button
           className="brand"
           type="button"
-          onClick={() => go("home")}
-          aria-label="Go to home"
+          onClick={() => go("Home")}
+          aria-label="Go to Home"
         >
           <b>MH</b>
           <span>Muhammad Hammad</span>
         </button>
 
         <button
-          className="menu"
+          className="Menu"
           type="button"
-          onClick={() => setMenu(!menu)}
+          onClick={() => setMenu(!Menu)}
           aria-label="Toggle navigation"
-          aria-expanded={menu}
+          aria-expanded={Menu}
         >
           {menu ? "X" : "MENU"}
         </button>
 
-        <nav className={menu ? "links open" : "links"}>
+        <nav className={Menu ? "links open" : "links"}>
 
-          {["home", "about", "projects", "skills", "contact"].map(
+          {["Home", "About", "Projects", "Skills", "Contact"].map(
             (item) => (
               <button
                 key={item}
