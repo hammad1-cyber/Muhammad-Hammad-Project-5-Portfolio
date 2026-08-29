@@ -6,81 +6,99 @@ const projects = [
   {
     number: "01",
     title: "Medicare Healthcare",
-    category: "Business Website",
+    type: "Business Website",
     technologies: ["HTML", "CSS", "JavaScript"],
-    image: `${import.meta.env.BASE_URL}projects/project-1-medical.JPG`,
     description:
       "Healthcare website with services, doctors, appointment booking, contact pages, and responsive layouts.",
-    liveUrl:
+    image: "/projects/project-1-medical.JPG",
+    website:
       "https://hammad1-cyber.github.io/project-1-medical-website/",
-    githubUrl:
+    github:
       "https://github.com/hammad1-cyber/project-1-medical-website",
-    icon: "✓",
+    marker: "01"
   },
   {
     number: "02",
     title: "EduTrack",
-    category: "Student Management Dashboard",
+    type: "Student Management Dashboard",
     technologies: ["React", "CSS", "Mock API"],
-    image: `${import.meta.env.BASE_URL}projects/project-2-student.JPG`,
     description:
       "Functional academic dashboard for students, courses, attendance, results, search, and filtering.",
-    liveUrl:
+    image: "/projects/project-2-student.JPG",
+    website:
       "https://hammad1-cyber.github.io/project-2-student-management/",
-    githubUrl:
+    github:
       "https://github.com/hammad1-cyber/project-2-student-management",
-    icon: "◆",
+    marker: "02"
   },
   {
     number: "03",
     title: "Product Explorer",
-    category: "API E-commerce",
+    type: "API E-commerce",
     technologies: ["React", "JavaScript", "REST API"],
-    image: `${import.meta.env.BASE_URL}projects/project-3-products.JPG`,
     description:
       "API-powered product explorer with categories, sorting, product details, favorites, and cart calculations.",
-    liveUrl:
+    image: "/projects/project-3-products.JPG",
+    website:
       "https://hammad1-cyber.github.io/project-3-api-product-explorer/",
-    githubUrl:
+    github:
       "https://github.com/hammad1-cyber/project-3-api-product-explorer",
-    icon: "◇",
+    marker: "03"
   },
   {
     number: "04",
     title: "Isobar Weather",
-    category: "Weather Application",
+    type: "Weather Application",
     technologies: ["React", "JavaScript", "Weather API"],
-    image: `${import.meta.env.BASE_URL}projects/project-4-weather.JPG`,
     description:
-      "Real weather experience with current conditions, hourly and daily forecasts, searches, and error/loading states.",
-    liveUrl:
+      "Real weather experience with current conditions, hourly and daily forecasts, searches, and error and loading states.",
+    image: "/projects/project-4-weather.JPG",
+    website:
       "https://hammad1-cyber.github.io/project-4-weather-app/",
-    githubUrl:
+    github:
       "https://github.com/hammad1-cyber/project-4-weather-app",
-    icon: "☼",
-  },
+    marker: "04"
+  }
 ];
 
 const skills = [
-  ["React", "Reusable components and frontend architecture"],
-  ["JavaScript", "Interactive functionality and API integration"],
-  ["HTML / CSS", "Semantic markup, layouts and responsive UI"],
-  ["REST APIs", "Data fetching, loading and error handling"],
-  ["Git / GitHub", "Version control and deployment"],
-  ["Responsive Design", "Interfaces across devices"],
+  [
+    "React",
+    "Reusable components and frontend architecture"
+  ],
+  [
+    "JavaScript",
+    "Interactive functionality and API integration"
+  ],
+  [
+    "HTML / CSS",
+    "Semantic markup, layouts and responsive UI"
+  ],
+  [
+    "REST APIs",
+    "Data fetching, loading and error handling"
+  ],
+  [
+    "Git / GitHub",
+    "Version control and deployment"
+  ],
+  [
+    "Responsive Design",
+    "Interfaces across different devices"
+  ]
 ];
 
 const roadmapDescriptions = [
   "Core HTML, CSS and JavaScript foundation",
   "React dashboard architecture and state",
   "React and REST API product experience",
-  "React and live weather API experience",
+  "React and live weather API experience"
 ];
 
 function App() {
-  const [dark, setDark] = useState(
-    () => localStorage.getItem("theme") !== "light"
-  );
+  const [dark, setDark] = useState(() => {
+    return localStorage.getItem("theme") !== "light";
+  });
 
   const [menu, setMenu] = useState(false);
   const [sent, setSent] = useState(false);
@@ -91,24 +109,34 @@ function App() {
   }, [dark]);
 
   const go = (id) => {
-    document.getElementById(id)?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    const element = document.getElementById(id);
+
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
 
     setMenu(false);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setSent(true);
+    event.currentTarget.reset();
   };
 
   return (
     <div className="app">
 
-      {/* NAVIGATION */}
       <header className="nav">
 
         <button
           className="brand"
-          onClick={() => go("home")}
           type="button"
+          onClick={() => go("home")}
+          aria-label="Go to home"
         >
           <b>MH</b>
           <span>Muhammad Hammad</span>
@@ -116,11 +144,12 @@ function App() {
 
         <button
           className="menu"
-          onClick={() => setMenu(!menu)}
           type="button"
+          onClick={() => setMenu(!menu)}
           aria-label="Toggle navigation"
+          aria-expanded={menu}
         >
-          {menu ? "×" : "☰"}
+          {menu ? "X" : "MENU"}
         </button>
 
         <nav className={menu ? "links open" : "links"}>
@@ -129,8 +158,8 @@ function App() {
             (item) => (
               <button
                 key={item}
-                onClick={() => go(item)}
                 type="button"
+                onClick={() => go(item)}
               >
                 {item}
               </button>
@@ -138,11 +167,11 @@ function App() {
           )}
 
           <button
-            onClick={() => setDark(!dark)}
             type="button"
+            onClick={() => setDark(!dark)}
             aria-label="Toggle theme"
           >
-            {dark ? "☀" : "☾"}
+            {dark ? "LIGHT" : "DARK"}
           </button>
 
         </nav>
@@ -150,7 +179,10 @@ function App() {
 
       <main>
 
-        {/* HOME */}
+        {/* ================================
+            HOME
+            ================================ */}
+
         <section id="home" className="hero section">
 
           <div>
@@ -166,7 +198,7 @@ function App() {
             </h1>
 
             <p className="lead">
-              I’m Muhammad Hammad, a frontend developer focused on
+              I&apos;m Muhammad Hammad, a frontend developer focused on
               responsive, functional web applications with clean
               interfaces and practical user experiences.
             </p>
@@ -175,18 +207,18 @@ function App() {
 
               <button
                 className="primary"
-                onClick={() => go("projects")}
                 type="button"
+                onClick={() => go("projects")}
               >
-                Explore my work ↗
+                Explore my work
               </button>
 
               <button
                 className="secondary"
-                onClick={() => go("contact")}
                 type="button"
+                onClick={() => go("contact")}
               >
-                Let's talk
+                Let&apos;s talk
               </button>
 
             </div>
@@ -205,42 +237,41 @@ function App() {
 
           </div>
 
-          {/* CODE CARD */}
           <div className="code">
 
             <div className="dots">
-
               <i />
               <i />
               <i />
-
               <small>developer.profile</small>
-
             </div>
 
             <pre>
               <span>const</span> developer = {"{"}
-              {"\n  "}name: <b>"Muhammad Hammad"</b>,
-              {"\n  "}role: <b>"Frontend Developer"</b>,
-              {"\n  "}stack: [
-              <b>"React"</b>, <b>"JavaScript"</b>, <b>"CSS"</b>],
-              {"\n  "}focus: <b>"Real working products"</b>
-              {"\n"}
-              {"}"}
+              {"\n"}  name: <b>&quot;Muhammad Hammad&quot;</b>,
+              {"\n"}  role: <b>&quot;Frontend Developer&quot;</b>,
+              {"\n"}  stack: [
+              <b>&quot;React&quot;</b>, <b>&quot;JavaScript&quot;</b>,{" "}
+              <b>&quot;CSS&quot;</b>],
+              {"\n"}  focus: <b>&quot;Real working products&quot;</b>
+              {"\n"}{"}"}
             </pre>
 
             <div className="status">
-              ● Open to opportunities
+              OPEN TO OPPORTUNITIES
             </div>
 
           </div>
 
         </section>
 
-        {/* ABOUT */}
+        {/* ================================
+            ABOUT
+            ================================ */}
+
         <section id="about" className="section line">
 
-          <label>01 — ABOUT</label>
+          <label>01 - ABOUT</label>
 
           <div className="two">
 
@@ -260,7 +291,7 @@ function App() {
 
               <p>
                 Every project is designed to be usable, responsive, and
-                deployable — not simply a static UI concept.
+                deployable - not simply a static UI concept.
               </p>
 
             </div>
@@ -269,14 +300,17 @@ function App() {
 
         </section>
 
-        {/* PROJECTS */}
+        {/* ================================
+            PROJECTS
+            ================================ */}
+
         <section id="projects" className="section line">
 
           <div className="heading">
 
             <div>
 
-              <label>02 — SELECTED WORK</label>
+              <label>02 - SELECTED WORK</label>
 
               <h2>
                 Projects that{" "}
@@ -302,6 +336,7 @@ function App() {
               >
 
                 {/* PROJECT SCREENSHOT */}
+
                 <div className="visual">
 
                   <img
@@ -310,73 +345,59 @@ function App() {
                     loading="lazy"
                   />
 
-                  <div className="visual-overlay">
-
-                    <small>{project.number}</small>
-
-                    <strong>{project.icon}</strong>
-
-                  </div>
+                  <small>{project.number}</small>
 
                 </div>
 
                 {/* PROJECT INFORMATION */}
+
                 <div className="content">
 
-                  <label>
-                    {project.category}
-                  </label>
+                  <label>{project.type}</label>
 
-                  <h3>
-                    {project.title}
-                  </h3>
+                  <h3>{project.title}</h3>
 
                   <p>
                     {project.description}
                   </p>
 
-                  {/* TECHNOLOGIES */}
                   <div className="tags">
 
-                    {project.technologies.map(
-                      (technology) => (
-                        <span key={technology}>
-                          {technology}
-                        </span>
-                      )
-                    )}
+                    {project.technologies.map((technology) => (
+
+                      <span key={technology}>
+                        {technology}
+                      </span>
+
+                    ))}
 
                   </div>
 
-                  {/* FEATURES */}
                   <div className="features">
 
-                    <span>✓ Responsive UI</span>
-
-                    <span>✓ Functional features</span>
-
-                    <span>✓ Deployed</span>
+                    <span>OK Responsive UI</span>
+                    <span>OK Functional features</span>
+                    <span>OK Deployed</span>
 
                   </div>
 
-                  {/* LINKS */}
                   <div className="project-actions">
 
                     <a
                       className="primary small"
-                      href={project.liveUrl}
+                      href={project.website}
                       target="_blank"
                       rel="noreferrer"
                     >
-                      Open Project ↗
+                      Open Project
                     </a>
 
                     <a
-                      href={project.githubUrl}
+                      href={project.github}
                       target="_blank"
                       rel="noreferrer"
                     >
-                      GitHub ↗
+                      GitHub
                     </a>
 
                   </div>
@@ -391,10 +412,13 @@ function App() {
 
         </section>
 
-        {/* ROADMAP */}
+        {/* ================================
+            ROADMAP
+            ================================ */}
+
         <section className="section line">
 
-          <label>03 — ROADMAP</label>
+          <label>03 - ROADMAP</label>
 
           <div className="roadmap">
 
@@ -424,10 +448,13 @@ function App() {
 
         </section>
 
-        {/* SKILLS */}
+        {/* ================================
+            SKILLS
+            ================================ */}
+
         <section id="skills" className="section line">
 
-          <label>04 — SKILLS</label>
+          <label>04 - SKILLS</label>
 
           <div className="skills">
 
@@ -459,7 +486,10 @@ function App() {
 
         </section>
 
-        {/* CONTACT */}
+        {/* ================================
+            CONTACT
+            ================================ */}
+
         <section
           id="contact"
           className="section line contact"
@@ -467,7 +497,7 @@ function App() {
 
           <div>
 
-            <label>05 — CONTACT</label>
+            <label>05 - CONTACT</label>
 
             <h2>
               Have a project
@@ -476,7 +506,7 @@ function App() {
             </h2>
 
             <p className="copy">
-              Let’s build something useful, polished, and genuinely
+              Let&apos;s build something useful, polished, and genuinely
               functional.
             </p>
 
@@ -494,13 +524,7 @@ function App() {
 
           </div>
 
-          <form
-            onSubmit={(event) => {
-              event.preventDefault();
-              setSent(true);
-              event.currentTarget.reset();
-            }}
-          >
+          <form onSubmit={handleSubmit}>
 
             <label>
               Name
@@ -510,7 +534,6 @@ function App() {
                 name="name"
                 placeholder="Your name"
               />
-
             </label>
 
             <label>
@@ -522,7 +545,6 @@ function App() {
                 name="email"
                 placeholder="you@example.com"
               />
-
             </label>
 
             <label>
@@ -534,20 +556,19 @@ function App() {
                 rows="5"
                 placeholder="Tell me about your project..."
               />
-
             </label>
 
             <button
               className="primary"
               type="submit"
             >
-              Send message ↗
+              Send message
             </button>
 
             {sent && (
               <div className="success">
-                Thanks! Please use the email address shown beside
-                the form to send your message.
+                Thanks! Please use the email address shown beside the
+                form to send your message.
               </div>
             )}
 
@@ -557,7 +578,10 @@ function App() {
 
       </main>
 
-      {/* FOOTER */}
+      {/* ================================
+          FOOTER
+          ================================ */}
+
       <footer>
 
         <span>
@@ -565,14 +589,14 @@ function App() {
         </span>
 
         <span>
-          © 2026 Muhammad Hammad · React & CSS
+          (c) 2026 Muhammad Hammad - React and CSS
         </span>
 
         <button
-          onClick={() => go("home")}
           type="button"
+          onClick={() => go("home")}
         >
-          Back to top ↑
+          Back to top
         </button>
 
       </footer>
