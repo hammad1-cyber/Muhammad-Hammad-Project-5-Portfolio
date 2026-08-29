@@ -142,14 +142,14 @@ function App() {
           <span>Muhammad Hammad</span>
         </button>
 
-        <button
+        {/* <button
           className="menu-toggle"
           type="button"
           onClick={() => setMenu(!menu)}
           aria-label="Toggle navigation menu"
         >
           ☰
-        </button>
+        </button> */}
 
         <nav className={menu ? "links open" : "links"}>
 
