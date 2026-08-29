@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+﻿import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./styles.css";
 
@@ -11,8 +11,8 @@ const projects = [
     "Healthcare website with services, doctors, appointment booking, contact pages, and responsive layouts.",
     "https://hammad1-cyber.github.io/project-1-medical-website/",
     "https://github.com/hammad1-cyber/project-1-medical-website",
-    "✓",
-    "/projects/project-1-medical.JPG",
+    "âœ“",
+    "/Muhammad-Hammad-Project-5-Portfolio/projects/project-1-medical.JPG",
   ],
   [
     "02",
@@ -22,8 +22,8 @@ const projects = [
     "Functional academic dashboard for students, courses, attendance, results, search, and filtering.",
     "https://hammad1-cyber.github.io/project-2-student-management/",
     "https://github.com/hammad1-cyber/project-2-student-management",
-    "◆",
-    "/projects/project-2-student.JPG",
+    "â—†",
+    "/Muhammad-Hammad-Project-5-Portfolio/projects/project-2-student.JPG",
   ],
   [
     "03",
@@ -33,8 +33,8 @@ const projects = [
     "API-powered product explorer with categories, sorting, product details, favorites, and cart calculations.",
     "https://hammad1-cyber.github.io/project-3-api-product-explorer/",
     "https://github.com/hammad1-cyber/project-3-api-product-explorer",
-    "◇",
-    "/projects/project-3-products.JPG",
+    "â—‡",
+    "/Muhammad-Hammad-Project-5-Portfolio/projects/project-3-products.JPG",
   ],
   [
     "04",
@@ -44,8 +44,8 @@ const projects = [
     "Real weather experience with current conditions, hourly and daily forecasts, searches, and error/loading states.",
     "https://hammad1-cyber.github.io/project-4-weather-app/",
     "https://github.com/hammad1-cyber/project-4-weather-app",
-    "☼",
-    "/projects/project-4-weather.JPG",
+    "â˜¼",
+    "/Muhammad-Hammad-Project-5-Portfolio/projects/project-4-weather.JPG",
   ],
 ];
 
@@ -86,7 +86,7 @@ function App() {
         </button>
 
         <button className="menu" onClick={() => setMenu(!menu)}>
-          {menu ? "×" : "☰"}
+          {menu ? "Ã—" : "â˜°"}
         </button>
 
         <nav className={menu ? "links open" : "links"}>
@@ -97,7 +97,7 @@ function App() {
           ))}
 
           <button onClick={() => setDark(!dark)}>
-            {dark ? "☀" : "☾"}
+            {dark ? "â˜€" : "â˜¾"}
           </button>
         </nav>
       </header>
@@ -115,14 +115,14 @@ function App() {
             </h1>
 
             <p className="lead">
-              I’m Muhammad Hammad, a frontend developer focused on responsive,
+              Iâ€™m Muhammad Hammad, a frontend developer focused on responsive,
               functional web applications with clean interfaces and practical
               user experiences.
             </p>
 
             <div className="actions">
               <button className="primary" onClick={() => go("projects")}>
-                Explore my work ↗
+                Explore my work â†—
               </button>
 
               <button className="secondary" onClick={() => go("contact")}>
@@ -158,12 +158,12 @@ function App() {
               {"\n"}{"}"}
             </pre>
 
-            <div className="status">● Open to opportunities</div>
+            <div className="status">â— Open to opportunities</div>
           </div>
         </section>
 
         <section id="about" className="section line">
-          <label>01 — ABOUT</label>
+          <label>01 â€” ABOUT</label>
 
           <div className="two">
             <h2>
@@ -181,7 +181,7 @@ function App() {
 
               <p>
                 Every project is designed to be usable, responsive, and
-                deployable — not simply a static UI concept.
+                deployable â€” not simply a static UI concept.
               </p>
             </div>
           </div>
@@ -190,7 +190,7 @@ function App() {
         <section id="projects" className="section line">
           <div className="heading">
             <div>
-              <label>02 — SELECTED WORK</label>
+              <label>02 â€” SELECTED WORK</label>
 
               <h2>
                 Projects that <span>actually work.</span>
@@ -232,9 +232,9 @@ function App() {
                   </div>
 
                   <div className="features">
-                    <span>✓ Responsive UI</span>
-                    <span>✓ Functional features</span>
-                    <span>✓ Deployed</span>
+                    <span>âœ“ Responsive UI</span>
+                    <span>âœ“ Functional features</span>
+                    <span>âœ“ Deployed</span>
                   </div>
 
                   <div className="project-actions">
@@ -244,7 +244,7 @@ function App() {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      Open Project ↗
+                      Open Project â†—
                     </a>
 
                     <a
@@ -252,7 +252,7 @@ function App() {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      GitHub ↗
+                      GitHub â†—
                     </a>
                   </div>
                 </div>
@@ -262,7 +262,7 @@ function App() {
         </section>
 
         <section className="section line">
-          <label>03 — ROADMAP</label>
+          <label>03 â€” ROADMAP</label>
 
           <div className="roadmap">
             {projects.map((p, i) => (
@@ -288,7 +288,7 @@ function App() {
         </section>
 
         <section id="skills" className="section line">
-          <label>04 — SKILLS</label>
+          <label>04 â€” SKILLS</label>
 
           <div className="skills">
             {skills.map((s, i) => (
@@ -306,7 +306,7 @@ function App() {
 
         <section id="contact" className="section line contact">
           <div>
-            <label>05 — CONTACT</label>
+            <label>05 â€” CONTACT</label>
 
             <h2>
               Have a project
@@ -315,7 +315,7 @@ function App() {
             </h2>
 
             <p className="copy">
-              Let’s build something useful, polished, and genuinely functional.
+              Letâ€™s build something useful, polished, and genuinely functional.
             </p>
 
             <div className="details">
@@ -366,7 +366,7 @@ function App() {
             </label>
 
             <button className="primary" type="submit">
-              Send message ↗
+              Send message â†—
             </button>
 
             {sent && (
@@ -382,10 +382,10 @@ function App() {
       <footer>
         <span>MH&nbsp; Muhammad Hammad</span>
 
-        <span>© 2026 Muhammad Hammad · React & CSS</span>
+        <span>Â© 2026 Muhammad Hammad Â· React & CSS</span>
 
         <button onClick={() => go("home")}>
-          Back to top ↑
+          Back to top â†‘
         </button>
       </footer>
     </div>
@@ -397,3 +397,4 @@ createRoot(document.getElementById("root")).render(
     <App />
   </React.StrictMode>
 );
+
