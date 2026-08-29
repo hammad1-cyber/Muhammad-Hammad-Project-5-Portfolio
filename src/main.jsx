@@ -135,21 +135,20 @@ function App() {
         <button
           className="brand"
           type="button"
-          onClick={() => go("Home")}
-          aria-label="Go to Home"
+          onClick={() => go("home")}
+          aria-label="Go to home"
         >
           <b>MH</b>
           <span>Muhammad Hammad</span>
         </button>
 
         <button
-          className="Menu"
+          className="menu-toggle"
           type="button"
           onClick={() => setMenu(!menu)}
-          aria-label="Toggle navigation"
-          aria-expanded={menu}
+          aria-label="Toggle navigation menu"
         >
-          {menu ? "X" : "MENU"}
+          ☰
         </button>
 
         <nav className={menu ? "links open" : "links"}>
