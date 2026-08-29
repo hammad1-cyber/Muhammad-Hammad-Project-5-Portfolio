@@ -152,7 +152,7 @@ function App() {
           {menu ? "X" : "MENU"}
         </button>
 
-        <nav className={Menu ? "links open" : "links"}>
+        <nav className={menu ? "links open" : "links"}>
 
           {["Home", "About", "Projects", "Skills", "Contact"].map(
             (item) => (
